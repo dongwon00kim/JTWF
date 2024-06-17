@@ -1,0 +1,1 @@
+This program is the leaderboard of users on a DCS dedicated server of JTWF.
