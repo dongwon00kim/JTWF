@@ -2,6 +2,7 @@ import argparse
 from dataclasses import dataclass
 import logging
 from pathlib import Path
+import pandas as pd
 
 DataTypes = {
     "Callsign": str,
@@ -68,14 +69,22 @@ class DataParser:
                 if set(parsed_data.keys()) == set(DataTypes.keys()):
                     datas.append(ScoreData(**parsed_data))
 
+        if datas:
+            datas.sort(key=lambda x: x.Balance, reverse=True)
+
         return datas
+
+
+    def get_dataframe(self):
+        data = self.get_data()
+        return pd.DataFrame(data)
 
 
 if __name__ == "__main__":
     formatter = (
         "%(asctime)s %(levelname)s [%(filename)s:%(lineno)d] %(message)s"
     )
-    logging.basicConfig(format=formatter, level=logging.INFO)
+    logging.basicConfig(format=formatter, level=logging.DEBUG)
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -86,8 +95,9 @@ if __name__ == "__main__":
 
     data_parser = DataParser(args.resource_dir)
     data = data_parser.get_data()
-
-
     print(data)
+
+    df =  data_parser.get_dataframe()
+    print(df)
 
     print("done")
