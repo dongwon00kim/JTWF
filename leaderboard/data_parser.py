@@ -39,7 +39,7 @@ class DataParser:
     def get_data(self):
         datas = []
         for file in self.files:
-            with open(file, "r") as f:
+            with open(file, "r", encoding="UTF8") as f:
                 data = f.read()
                 data = data.replace('\t', '').split('\n')
 
