@@ -1,0 +1,9 @@
+ScoreData = {
+	["Callsign"] = "Macross",
+	["Balance"] = 1550,
+	["AA"] = 17,
+	["AG"] = 1000,
+	["CSAR"] = 10,
+	["SorT"] = 1203,
+	["KIA"] = 0,
+}

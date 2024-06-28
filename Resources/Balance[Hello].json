@@ -1,0 +1,9 @@
+ScoreData = {
+	["Callsign"] = "Hello",
+	["Balance"] = 15500,
+	["AA"] = 18,
+	["AG"] = 12000,
+	["CSAR"] = 9,
+	["SorT"] = 20203,
+	["KIA"] = 9,
+}

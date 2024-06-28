@@ -5,7 +5,7 @@ import logging
 import webbrowser
 
 from pathlib import Path
-from data_parser import DataParser
+from leaderboard.data_parser import DataParser
 
 def main():
     formatter = (
@@ -27,13 +27,13 @@ def main():
     styler = df.style.highlight_max(color = 'darkgray', axis = 0)
 
 
-    title="JTWF Dedicated Server Leaderboard"
+    title="JTWF Mercenary Leaderboard"
     css="footer {visibility: hidden}"
 
     with gr.Blocks(title=title, css=css) as app:
         gr.Markdown(
             """
-            # JTWF Dedicated Server Leaderboard
+            # JTWF Mercenary Leaderboard
             """)
         gr.DataFrame(styler)
 
